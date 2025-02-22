@@ -10,7 +10,7 @@ const urlMap = {
   code: "CodeSample",
   figma: "Figma",
   sketch: "Experiments",
-  github: "GitHub",
+  linkedin: "LinkedIn",
   contact: "Contact With JA",
 };
 

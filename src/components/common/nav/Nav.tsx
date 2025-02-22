@@ -1,10 +1,9 @@
 import React from "react";
 import { CgProfile } from "react-icons/cg";
-import { FaRegFolderOpen, FaLaptopCode } from "react-icons/fa";
+import { FaLaptopCode, FaLinkedin } from "react-icons/fa";
 import { RxNotionLogo, RxFigmaLogo } from "react-icons/rx";
-import { SiGithub } from "react-icons/si";
 import { TbMessageCircleFilled } from "react-icons/tb";
-import { FaRegPenToSquare } from "react-icons/fa6";
+import { FaRegPenToSquare, FaRegFolderClosed } from "react-icons/fa6";
 import Link from "next/link";
 
 const Nav = () => {
@@ -17,7 +16,7 @@ const Nav = () => {
     {
       link: "/portfolio",
       title: "Portfolio",
-      children: <FaRegFolderOpen className="w-[25px] h-[25px]" />,
+      children: <FaRegFolderClosed className="w-[25px] h-[25px]" />,
     },
     {
       link: "/notion",
@@ -41,9 +40,9 @@ const Nav = () => {
     },
     { link: "/", title: "Line", children: "" },
     {
-      link: "/github",
+      link: "/linkedin",
       title: "SNS",
-      children: <SiGithub className="w-[25px] h-[25px]" />,
+      children: <FaLinkedin className="w-[25px] h-[25px]" />,
     },
     {
       link: "/contact",
@@ -54,13 +53,13 @@ const Nav = () => {
 
   const bgColors = [
     "bg-yellow-400",
-    "bg-blue-500",
+    "bg-blue-400",
     "bg-black",
     "bg-purple-300",
     "bg-pink-500",
     "bg-indigo-300",
     "bg-white",
-    "bg-black",
+    "bg-blue-500",
     "bg-green-500",
   ];
 
