@@ -1,32 +1,42 @@
-import type { Metadata } from "next";
+"use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/header/Header";
 import { IoLogoApple } from "react-icons/io5";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "RESUMAC",
-  description: "JA's Portfolio, Mac-inspired ",
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className="w-screen h-screen">
           <div className="w-full h-[90%] bg-[#ecedef] flex flex-col items-center">
-            <div className="w-full h-[20px] m-[0 auto] flex justify-center items-center">
-              <div className="w-[8px] h-[8px] bg-black rounded-[50%]"></div>
+            <div className="w-full h-[20px] flex justify-center items-center">
+              <div className="w-[8px] h-[8px] bg-black rounded-full"></div>
             </div>
             <div className="w-[98%] h-[94%] border border-solid border-[#4F4F57]">
               <Header />
-              <div className="w-full height-contents">{children}</div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={pathname}
+                  initial={
+                    isHome ? { opacity: 0, y: -10 } : { opacity: 0, y: 10 }
+                  }
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="w-full height-contents"
+                >
+                  {children}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
           <div className="w-full h-[10%] bg-[#C0C3E6] flex justify-center items-center">
