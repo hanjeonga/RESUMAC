@@ -6,7 +6,7 @@ const LabelText = ({ label, value }: LabelTextProps) => {
     <div className="flex items-center">
       <Text className="w-[80px] text-[#9b9b9b] leading-[150%]" value={label} />
       <div className="label-line leading-[150%]" />
-      <Text className="text-white leading-[150%]" value={value} />
+      <Text className="text-white leading-[150%] opacity-[0.8]" value={value} />
     </div>
   );
 };

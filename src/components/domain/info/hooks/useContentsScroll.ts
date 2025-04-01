@@ -1,35 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 
 const useContentsScroll = (sections: string[]) => {
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>(
+    Array(sections.length).fill(null)
+  );
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visibleSection = entries.find((entry) => entry.isIntersecting);
-        if (visibleSection) {
-          setActiveSection(visibleSection.target.id);
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id);
         }
       },
-      { threshold: 0.5 }
+      { threshold: [0.3, 0.6, 0.9] }
     );
 
-    sectionRefs.current.forEach((ref) => {
+    const currentRefs = sectionRefs.current.slice();
+    currentRefs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      sectionRefs.current.forEach((ref) => {
+      currentRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
-  }, []);
+  }, [sections]);
 
-  // 특정 섹션으로 스크롤 이동
   const handleScrollTo = (id: string) => {
     const section = sectionRefs.current.find((ref) => ref?.id === id);
-    section?.scrollIntoView({ behavior: "smooth" });
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return { sectionRefs, activeSection, handleScrollTo };

@@ -1,5 +1,5 @@
 export const setTime = () => {
-  let now = new Date();
+  const now = new Date();
   const month = [
     "Jan",
     "Feb",
@@ -14,17 +14,17 @@ export const setTime = () => {
     "Nov",
     "Dec",
   ];
-  let todayMonth = month[now.getMonth()];
-  let todayDate = now.getDate();
+  const todayMonth = month[now.getMonth()];
+  const todayDate = now.getDate();
   const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let dayOfWeek = week[now.getDay()];
+  const dayOfWeek = week[now.getDay()];
   let hours = now.getHours();
-  var ampm = hours >= 12 ? "PM" : "AM";
+  const ampm = hours >= 12 ? "PM" : "AM";
   hours = hours % 12;
   hours = hours ? hours : 12;
   let minutes: string | number = now.getMinutes();
   minutes = minutes < 10 ? "0" + minutes : minutes;
-  var strTime = hours + ":" + minutes + " " + ampm;
+  const strTime = hours + ":" + minutes + " " + ampm;
 
   return dayOfWeek + "   " + todayMonth + "   " + todayDate + "   " + strTime;
 };

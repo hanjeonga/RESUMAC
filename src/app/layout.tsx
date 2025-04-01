@@ -5,6 +5,7 @@ import Header from "@/components/common/header/Header";
 import { IoLogoApple } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import "../../i18n";
 
 const inter = Inter({ subsets: ["latin"] });
 
