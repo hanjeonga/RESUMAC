@@ -1,42 +1,62 @@
 export const portfolioList = [
   {
-    link: "/info",
-    title: "1",
+    link: "/careup",
+    title: "CareUP",
   },
   {
-    link: "/info",
-    title: "2",
+    link: "/medikids",
+    title: "MediKids",
   },
   {
-    link: "/info",
-    title: "3",
+    link: "/taebaeck",
+    title: "스마트 경로당",
   },
   {
-    link: "/info",
-    title: "4",
+    link: "/deepmedi",
+    title: "DEEPMEDI",
   },
   {
-    link: "/info",
-    title: "5",
+    link: "/stressmonitor",
+    title: "StressMonitor",
   },
   {
-    link: "/info",
-    title: "6",
+    link: "/video",
+    title: "Video Analytics",
   },
   {
-    link: "/info",
-    title: "7",
+    link: "/facehealthmonitor",
+    title: "FaceHealthMonitor",
   },
   {
-    link: "/info",
-    title: "8",
+    link: "/ddc",
+    title: "DDC",
   },
   {
-    link: "/info",
-    title: "9",
+    link: "/webview",
+    title: "WEB View",
   },
   {
-    link: "/info",
-    title: "10",
+    link: "/sosomap",
+    title: "SOSOMAP",
+  },
+  {
+    link: "/mindwalk",
+    title: "MindWalk",
+  },
+  {
+    link: "/zetaplan",
+    title: "ZetaPlan",
+  },
+  {
+    link: "/zelkovatree",
+    title: "느티나무도서관",
+  },
+  {
+    link: "/kurly",
+    title: "Kurly_copy",
+  },
+  {
+    link: "/baemin",
+    title: "배달의 민족_copy",
   },
 ];

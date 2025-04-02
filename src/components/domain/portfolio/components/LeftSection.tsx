@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { portfolioList } from "../utils/contentsList";
-import { IoFolderOutline } from "react-icons/io5";
-
+import { FaFolder } from "react-icons/fa";
+import Text from "@/components/atoms/text/Text";
 const LeftSection = () => {
   const [isHovered, setIsHovered] = useState("0");
   return (
@@ -22,10 +22,8 @@ const LeftSection = () => {
                   isHovered === portfolio.title ? "bg-[#ccc]" : ""
                 }`}
               >
-                <IoFolderOutline className="w-[20px] h-auto text-[#476CD5]" />
-                <span className="text-black text-[16px]">
-                  {portfolio.title}
-                </span>
+                <FaFolder className="w-[20px] h-auto text-[#5DCAF8]" />
+                <Text value={portfolio.title} />
               </div>
             </Link>
           );

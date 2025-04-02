@@ -151,3 +151,17 @@ p {
   pointer-events: none;
   color: #fff;
 }
+
+.folder-close {
+  width: 40px;
+  height: 40px;
+  background: url('/img/folder_close.png') no-repeat center center;
+  background-size: cover;
+}
+
+.folder-open {
+  width: 40px;
+  height: 40px;
+  background: url('/img/folder_open.png') no-repeat center center;
+  background-size: cover;
+}
