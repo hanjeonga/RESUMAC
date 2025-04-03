@@ -14,11 +14,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isPortfolioPath = pathname.includes("/open/portfolio");
 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-screen h-screen">
+        <div className="w-screen h-screen min-w-[1110px]">
           <div className="w-full h-[90%] bg-[#ecedef] flex flex-col items-center">
             <div className="w-full h-[20px] flex justify-center items-center">
               <div className="w-[8px] h-[8px] bg-black rounded-full"></div>
@@ -29,7 +30,11 @@ export default function RootLayout({
                 <motion.div
                   key={pathname}
                   initial={
-                    isHome ? { opacity: 0, y: -10 } : { opacity: 0, y: 10 }
+                    isHome
+                      ? { opacity: 0, y: -10 }
+                      : isPortfolioPath
+                      ? {}
+                      : { opacity: 0, y: 10 }
                   }
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}

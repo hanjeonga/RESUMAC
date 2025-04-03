@@ -9,13 +9,16 @@ export const metadata: Metadata = {
 };
 export default function OpenLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <div className="size-full min-w-[1080px]">
       <OpenHeader />
       {children}
+      {modal}
     </div>
   );
 }

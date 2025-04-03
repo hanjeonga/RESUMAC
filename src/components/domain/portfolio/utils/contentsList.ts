@@ -1,5 +1,9 @@
 export const portfolioList = [
   {
+    link: "/portfolio",
+    title: "Portfolio List",
+  },
+  {
     link: "/careup",
     title: "CareUP",
   },
