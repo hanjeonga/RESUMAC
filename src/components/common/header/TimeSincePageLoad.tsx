@@ -32,7 +32,11 @@ const TimeSincePageLoad = () => {
     }
   };
 
-  return <span>{`(ing : ${getFormattedTime(timeElapsed)})`}</span>;
+  return (
+    <span className="text-white">{`(ing : ${getFormattedTime(
+      timeElapsed
+    )})`}</span>
+  );
 };
 
 export default TimeSincePageLoad;

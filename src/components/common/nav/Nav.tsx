@@ -11,43 +11,45 @@ const Nav = () => {
     {
       link: "/info",
       title: "Profile",
-      children: <CgProfile className="w-[25px] h-[25px]" />,
+      children: <CgProfile className="w-[25px] h-[25px] text-white" />,
     },
     {
       link: "/portfolio",
       title: "Portfolio",
-      children: <FaRegFolderClosed className="w-[25px] h-[25px]" />,
+      children: <FaRegFolderClosed className="w-[25px] h-[25px] text-white" />,
     },
     {
       link: "/notion",
       title: "Log",
-      children: <RxNotionLogo className="w-[25px] h-[25px]" />,
+      children: <RxNotionLogo className="w-[25px] h-[25px] text-white" />,
     },
     {
       link: "/code",
       title: "Code",
-      children: <FaLaptopCode className="w-[25px] h-[25px]" />,
+      children: <FaLaptopCode className="w-[25px] h-[25px] text-white" />,
     },
     {
       link: "/figma",
       title: "StoryBoard",
-      children: <RxFigmaLogo className="w-[25px] h-[25px]" />,
+      children: <RxFigmaLogo className="w-[25px] h-[25px] text-white" />,
     },
     {
       link: "/sketch",
       title: "Gallery",
-      children: <FaRegPenToSquare className="w-[25px] h-[25px]" />,
+      children: <FaRegPenToSquare className="w-[25px] h-[25px] text-white" />,
     },
     { link: "/", title: "Line", children: "" },
     {
       link: "/linkedin",
       title: "SNS",
-      children: <FaLinkedin className="w-[25px] h-[25px]" />,
+      children: <FaLinkedin className="w-[25px] h-[25px] text-white" />,
     },
     {
       link: "/contact",
       title: "Contact",
-      children: <TbMessageCircleFilled className="w-[25px] h-[25px]" />,
+      children: (
+        <TbMessageCircleFilled className="w-[25px] h-[25px] text-white" />
+      ),
     },
   ];
 
