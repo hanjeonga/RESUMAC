@@ -9,7 +9,7 @@ const RightSection = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full h-full bg-white px-[20px] py-[30px] grid grid-cols-7 grid-flow-row auto-rows-min gap-y-10 overflow-auto">
+    <div className="w-full h-full bg-white px-[20px] py-[30px] grid grid-cols-7 grid-flow-row auto-rows-min gap-y-10 overflow-auto scroll-display-none">
       {portfolioList
         .filter((link) => link.link !== "/portfolio")
         .map((portfolio, idx) => {

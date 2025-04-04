@@ -86,13 +86,14 @@ p {
   scrollbar-width: none;
 }
 
+.scroll-display-none::-webkit-scrollbar {
+  display: none;
+}
+
 .scroll-display-none {
   overflow-y: auto;
   scrollbar-width: none;
-}
-
-.scroll-display-none::-webkit-scrollbar {
-  display: none;
+  -ms-overflow-style: none;
 }
 
 .open-height {

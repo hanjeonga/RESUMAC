@@ -9,16 +9,19 @@ const resources = {
 } as const;
 
 const initializeI18n = () => {
-  i18next.use(initReactI18next).init({
-    resources,
-    lng: "ko",
-    fallbackLng: "en",
-    interpolation: { escapeValue: false },
-  });
+  if (!i18next.isInitialized) {
+    i18next.use(initReactI18next).init({
+      resources,
+      lng: "ko",
+      fallbackLng: "en",
+      interpolation: { escapeValue: false },
+      react: {
+        useSuspense: false,
+      },
+    });
+  }
 };
 
-if (typeof window !== "undefined") {
-  initializeI18n();
-}
+initializeI18n();
 
 export default i18next;
